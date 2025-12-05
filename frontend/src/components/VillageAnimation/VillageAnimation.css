@@ -1,0 +1,385 @@
+/* VillageAnimation.css */
+.village-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Magical Particles */
+.magic-particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(1px);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Village House */
+.village-house {
+  position: absolute;
+  animation: float 6s ease-in-out infinite;
+}
+
+.village-house.house-1 {
+  bottom: 10%;
+  left: 5%;
+  width: 80px;
+  height: 70px;
+  animation-delay: 0s;
+}
+
+.village-house.house-2 {
+  bottom: 8%;
+  right: 10%;
+  width: 100px;
+  height: 85px;
+  animation-delay: 2s;
+}
+
+.village-house .roof {
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  position: absolute;
+  top: 0;
+}
+
+.village-house .walls {
+  width: 80%;
+  height: 60%;
+  background: linear-gradient(135deg, #d4b483, #b08d57);
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  border-radius: 5px;
+}
+
+.village-house .window {
+  width: 20px;
+  height: 20px;
+  background: #ffd700;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  box-shadow: 0 0 15px #ffd700;
+  animation: pulse 2s infinite;
+}
+
+.village-house .door {
+  width: 15px;
+  height: 30px;
+  background: #8b4513;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Village Tree */
+.village-tree {
+  position: absolute;
+  animation: float 8s ease-in-out infinite;
+}
+
+.village-tree.tree-1 {
+  bottom: 5%;
+  left: 15%;
+  width: 40px;
+  height: 100px;
+  animation-delay: 1s;
+}
+
+.village-tree.tree-2 {
+  bottom: 7%;
+  right: 20%;
+  width: 50px;
+  height: 120px;
+  animation-delay: 3s;
+}
+
+.village-tree .trunk {
+  width: 15px;
+  height: 70%;
+  background: linear-gradient(to right, #8b4513, #a0522d);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.village-tree .leaves {
+  width: 100%;
+  height: 50%;
+  background: radial-gradient(circle at 50% 0%, #2d5a27, #1e3a1e);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Floating Shield */
+.floating-shield {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.shield-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(192, 192, 192, 0.5));
+}
+
+/* Floating Sword */
+.floating-sword {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  animation: bounce 2.5s ease-in-out infinite reverse;
+}
+
+.sword-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* Magic Potion */
+.magic-potion {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: float 4s ease-in-out infinite;
+}
+
+.potion-bottle {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.7));
+}
+
+.potion-bubbles {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 50px;
+}
+
+.bubble {
+  position: absolute;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  animation: bubble-rise 3s infinite;
+}
+
+.bubble-1 {
+  width: 10px;
+  height: 10px;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  width: 8px;
+  height: 8px;
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+.bubble-3 {
+  width: 6px;
+  height: 6px;
+  left: 70%;
+  animation-delay: 1s;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-50px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Resistance Flag */
+.resistance-flag {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wave 5s ease-in-out infinite;
+}
+
+.flag-pole {
+  width: 5px;
+  height: 80px;
+  background: linear-gradient(to bottom, #c0c0c0, #a0a0a0);
+  margin: 0 auto;
+}
+
+.flag-cloth {
+  width: 80px;
+  height: 50px;
+  background: linear-gradient(135deg, #b22222, #8b0000);
+  position: absolute;
+  top: 0;
+  left: 5px;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.flag-text {
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-50%) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+}
+
+/* Ambient Glow */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.1;
+}
+
+.glow-1 {
+  width: 300px;
+  height: 300px;
+  background: #8b5cf6;
+  top: 20%;
+  left: 10%;
+  animation: pulse 8s infinite;
+}
+
+.glow-2 {
+  width: 200px;
+  height: 200px;
+  background: #3b82f6;
+  bottom: 20%;
+  right: 15%;
+  animation: pulse 6s infinite reverse;
+}
+
+.glow-3 {
+  width: 250px;
+  height: 250px;
+  background: #10b981;
+  top: 60%;
+  left: 20%;
+  animation: pulse 10s infinite;
+}
+
+/* Fireflies */
+.fireflies {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fbbf24;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: firefly-move 15s infinite linear;
+  opacity: 0.8;
+}
+
+.firefly:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.firefly:nth-child(2) {
+  top: 30%;
+  left: 80%;
+  animation-delay: 3s;
+}
+
+.firefly:nth-child(3) {
+  top: 60%;
+  left: 10%;
+  animation-delay: 6s;
+}
+
+.firefly:nth-child(4) {
+  top: 80%;
+  left: 60%;
+  animation-delay: 9s;
+}
+
+.firefly:nth-child(5) {
+  top: 40%;
+  left: 40%;
+  animation-delay: 12s;
+}
+
+@keyframes firefly-move {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, -100px);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .village-house {
+    transform: scale(0.7);
+  }
+  
+  .village-tree {
+    transform: scale(0.7);
+  }
+  
+  .floating-shield,
+  .floating-sword,
+  .magic-potion {
+    transform: scale(0.8);
+  }
+  
+  .ambient-glow {
+    filter: blur(40px);
+  }
+}

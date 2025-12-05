@@ -1,0 +1,360 @@
+/* src/styles/dashboard.css */
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, var(--gaulish-green), var(--magic-purple));
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stats-overview {
+  margin: 40px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  font-size: 2.5em;
+  color: var(--magic-purple);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--gaulish-green);
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Tabs */
+.dashboard-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 30px 0;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: var(--magic-purple);
+  color: white;
+}
+
+.tab-btn:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+/* Search */
+.search-section {
+  margin: 20px 0;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 1em;
+}
+
+/* Table */
+.warriors-table {
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.warriors-table th {
+  background: var(--gaulish-green);
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.warriors-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.warriors-table tr:hover {
+  background: #f9f9f9;
+}
+
+/* Badges */
+.mission-tag {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mission-contact { background: #dbeafe; color: #1e40af; }
+.mission-donate { background: #dcfce7; color: #166534; }
+.mission-volunteer { background: #fef3c7; color: #92400e; }
+.mission-info { background: #f3e8ff; color: #6b21a8; }
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.status-active { background: #dcfce7; color: #166534; }
+.status-inactive { background: #f3f4f6; color: #6b7280; }
+.status-veteran { background: #fef3c7; color: #92400e; }
+
+.impact-score {
+  font-weight: bold;
+  color: var(--resistance-red);
+}
+
+/* Edit Controls */
+.edit-input, .edit-select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-success, .btn-danger, .btn-edit {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-edit {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Leaderboard */
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-rank {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--magic-purple);
+  margin-right: 20px;
+  min-width: 40px;
+}
+
+.leaderboard-info {
+  flex: 1;
+}
+
+.leaderboard-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.leaderboard-badge {
+  background: var(--gold-yellow);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+.leaderboard-details {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Mission Stats */
+.mission-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mission-stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mission-stat-title {
+  color: var(--gaulish-green);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.mission-stat-numbers {
+  display: grid;
+  gap: 10px;
+}
+
+.mission-stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  color: #666;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: var(--resistance-red);
+}
+
+.mission-progress {
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.mission-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--magic-purple), var(--sky-blue));
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* Data Management */
+.data-management {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.data-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-export, .btn-refresh {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.btn-export {
+  background: var(--gaulish-green);
+  color: white;
+}
+
+.btn-refresh {
+  background: var(--sky-blue);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .warriors-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .leaderboard-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .dashboard-tabs {
+    flex-direction: column;
+  }
+}

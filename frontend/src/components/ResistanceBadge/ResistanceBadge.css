@@ -1,0 +1,381 @@
+/* ResistanceBadge.css */
+.resistance-badge {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.resistance-badge:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Size variations */
+.badge-small {
+  width: 200px;
+  padding: 1rem;
+}
+
+.badge-medium {
+  width: 280px;
+}
+
+.badge-large {
+  width: 350px;
+  padding: 2rem;
+}
+
+/* Rarity variations */
+.rarity-common {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+}
+
+.rarity-uncommon {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+}
+
+.rarity-rare {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.rarity-legendary {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+}
+
+/* Badge Glow */
+.badge-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid;
+  border-radius: 25px;
+  opacity: 0.3;
+  filter: blur(10px);
+  animation: pulse 2s infinite;
+}
+
+/* Badge Background */
+.badge-background {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+.badge-medium .badge-background {
+  width: 120px;
+  height: 120px;
+}
+
+.badge-large .badge-background {
+  width: 150px;
+  height: 150px;
+}
+
+/* Shield Badge */
+.badge-shield {
+  width: 100%;
+  height: 100%;
+  border: 4px solid;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-inner {
+  width: 70%;
+  height: 70%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-icon {
+  font-size: 3rem;
+}
+
+.badge-medium .shield-icon {
+  font-size: 3.5rem;
+}
+
+.badge-large .shield-icon {
+  font-size: 4.5rem;
+}
+
+/* Star Badge */
+.badge-star {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-icon {
+  font-size: 6rem;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.badge-icon {
+  font-size: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-medium .star-icon {
+  font-size: 7rem;
+}
+
+.badge-medium .badge-icon {
+  font-size: 3.5rem;
+}
+
+.badge-large .star-icon {
+  font-size: 9rem;
+}
+
+.badge-large .badge-icon {
+  font-size: 4.5rem;
+}
+
+/* Crown Badge */
+.badge-crown {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crown-icon {
+  font-size: 5rem;
+  position: absolute;
+  top: -10px;
+  opacity: 0.3;
+}
+
+.badge-medium .crown-icon {
+  font-size: 6rem;
+  top: -15px;
+}
+
+.badge-large .crown-icon {
+  font-size: 8rem;
+  top: -20px;
+}
+
+/* Badge Content */
+.badge-content {
+  text-align: center;
+  width: 100%;
+}
+
+.badge-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.badge-medium .badge-title {
+  font-size: 1.4rem;
+}
+
+.badge-large .badge-title {
+  font-size: 1.6rem;
+}
+
+.badge-description {
+  color: #c4b5fd;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.badge-medium .badge-description {
+  font-size: 1rem;
+}
+
+.badge-large .badge-description {
+  font-size: 1.1rem;
+}
+
+/* Badge Rarity */
+.badge-rarity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.rarity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.rarity-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rarity-common .rarity-text {
+  color: #8b5cf6;
+}
+
+.rarity-uncommon .rarity-text {
+  color: #3b82f6;
+}
+
+.rarity-rare .rarity-text {
+  color: #fbbf24;
+}
+
+.rarity-legendary .rarity-text {
+  color: #f59e0b;
+}
+
+/* Locked State */
+.locked-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 18px;
+  opacity: 0.9;
+}
+
+.lock-icon {
+  font-size: 2.5rem;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.locked-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #9ca3af;
+}
+
+/* Achievement Particles */
+.achievement-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: particle-float 1.5s ease-out forwards;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(var(--random-x, 0) * 100px),
+      calc(var(--random-y, 0) * 100px)
+    ) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Set random positions for particles */
+.particle:nth-child(1) { --random-x: 1; --random-y: 0; top: 50%; left: 50%; }
+.particle:nth-child(2) { --random-x: 0.7; --random-y: 0.7; top: 50%; left: 50%; }
+.particle:nth-child(3) { --random-x: 0; --random-y: 1; top: 50%; left: 50%; }
+.particle:nth-child(4) { --random-x: -0.7; --random-y: 0.7; top: 50%; left: 50%; }
+.particle:nth-child(5) { --random-x: -1; --random-y: 0; top: 50%; left: 50%; }
+.particle:nth-child(6) { --random-x: -0.7; --random-y: -0.7; top: 50%; left: 50%; }
+.particle:nth-child(7) { --random-x: 0; --random-y: -1; top: 50%; left: 50%; }
+.particle:nth-child(8) { --random-x: 0.7; --random-y: -0.7; top: 50%; left: 50%; }
+
+/* Hover Effects */
+.resistance-badge:hover .badge-shield {
+  animation: shield-spin 20s linear infinite;
+}
+
+@keyframes shield-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.resistance-badge:hover .badge-star {
+  animation: star-spin 10s linear infinite;
+}
+
+@keyframes star-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .badge-medium, .badge-large {
+    width: 250px;
+    padding: 1.25rem;
+  }
+  
+  .badge-background {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .shield-icon,
+  .badge-icon {
+    font-size: 2.5rem;
+  }
+  
+  .star-icon {
+    font-size: 5rem;
+  }
+  
+  .crown-icon {
+    font-size: 4rem;
+    top: -5px;
+  }
+}

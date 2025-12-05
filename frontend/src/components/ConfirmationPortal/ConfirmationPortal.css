@@ -1,0 +1,264 @@
+/* ConfirmationPortal.css */
+.confirmation-portal {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 3rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 
+    0 0 60px rgba(139, 92, 246, 0.5),
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Portal Ring */
+.portal-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  pointer-events: none;
+}
+
+.ring-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  animation: spin 30s linear infinite;
+}
+
+.ring-outer {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  border: 4px solid rgba(139, 92, 246, 0.2);
+  border-radius: 50%;
+  animation: spin 40s linear infinite reverse;
+}
+
+/* Portal Content */
+.portal-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.portal-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.portal-title {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #fbbf24, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.portal-message {
+  font-size: 1.2rem;
+  color: #c4b5fd;
+  line-height: 1.6;
+}
+
+/* Achievement Display */
+.achievement-display {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  border: 2px solid rgba(139, 92, 246, 0.2);
+  text-align: left;
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-info h4 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-info p {
+  color: #c4b5fd;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-label {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0.75rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.progress-text {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Next Steps */
+.next-steps {
+  text-align: left;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.next-steps h4 {
+  color: #fbbf24;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.next-steps ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.next-steps li {
+  color: #c4b5fd;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Portal Particles */
+.portal-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 50%;
+  animation: particle-float 3s ease-out infinite;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Hover Effects */
+.confirmation-portal:hover .ring-inner {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.confirmation-portal:hover .ring-outer {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .confirmation-portal {
+    padding: 2rem;
+    margin: 1rem;
+  }
+  
+  .portal-title {
+    font-size: 1.8rem;
+  }
+  
+  .portal-icon {
+    font-size: 3rem;
+  }
+  
+  .achievement-display {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .next-steps {
+    text-align: center;
+  }
+  
+  
+  .next-steps ul {
+    align-items: center;
+  }
+}
