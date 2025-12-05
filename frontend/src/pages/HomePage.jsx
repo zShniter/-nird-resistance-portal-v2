@@ -10,6 +10,28 @@ const STORAGE_KEYS = {
   ACTIVITIES: 'nird_activities'
 };
 
+// Fonction pour formater le temps
+const formatTimeAgo = (timestamp) => {
+  const now = new Date();
+  const activityTime = new Date(timestamp);
+  const diffMs = now - activityTime;
+  
+  const diffSeconds = Math.floor(diffMs / 1000);
+  const diffMinutes = Math.floor(diffSeconds / 60);
+  const diffHours = Math.floor(diffMinutes / 60);
+  const diffDays = Math.floor(diffHours / 24);
+  
+  if (diffDays > 0) {
+    return diffDays === 1 ? "Il y a 1 jour" : `Il y a ${diffDays} jours`;
+  } else if (diffHours > 0) {
+    return diffHours === 1 ? "Il y a 1 heure" : `Il y a ${diffHours} heures`;
+  } else if (diffMinutes > 0) {
+    return diffMinutes === 1 ? "Il y a 1 minute" : `Il y a ${diffMinutes} minutes`;
+  } else {
+    return "À l'instant";
+  }
+};
+
 const HomePage = () => {
   const [selectedMission, setSelectedMission] = useState(null);
   const [showForm, setShowForm] = useState(false);
@@ -156,7 +178,7 @@ const HomePage = () => {
       baseScore += formData.message.length > 100 ? 80 : 40;
     }
     
-    return baseScore;
+    return Math.min(baseScore, 500); // Limite maximale de 500
   };
 
   // Sauvegarder dans localStorage
@@ -165,21 +187,16 @@ const HomePage = () => {
   };
 
   // Ajouter une activité
-  const addActivity = (action, type) => {
-    const timeAgo = [
-      "Il y a quelques minutes",
-      "Il y a 1 heure",
-      "Il y a 2 heures",
-      "Il y a 4 heures",
-      "Il y a 1 jour",
-      "Il y a 2 jours"
-    ];
+  const addActivity = (warriorName, action, type) => {
+    const timestamp = new Date().toISOString();
+    const timeDisplay = formatTimeAgo(timestamp);
     
     const newActivity = {
       id: Date.now(),
-      warrior: formData.name || "Nouveau Guerrier",
+      warrior: warriorName,
       action: action,
-      time: timeAgo[Math.floor(Math.random() * timeAgo.length)],
+      time: timeDisplay,
+      timestamp: timestamp,
       type: type
     };
     
@@ -189,7 +206,7 @@ const HomePage = () => {
       activities = JSON.parse(savedActivities);
     }
     
-    const updatedActivities = [newActivity, ...activities.slice(0, 9)];
+    const updatedActivities = [newActivity, ...activities.slice(0, 19)]; // Garder les 20 dernières activités
     saveToLocalStorage(STORAGE_KEYS.ACTIVITIES, updatedActivities);
   };
 
@@ -246,7 +263,7 @@ const HomePage = () => {
         village: "Principal", // Village par défaut
         status: "active",
         joinDate: new Date().toISOString().split('T')[0],
-        skills: getSkillsForMission(selectedMission.id),
+        skills: selectedMission.id === 'volunteer' ? formData.skills : getSkillsForMission(selectedMission.id),
         missionData: {}
       };
 
@@ -258,7 +275,6 @@ const HomePage = () => {
         warriorData.missionData.recurring = formData.recurring;
       } else if (selectedMission.id === 'volunteer') {
         warriorData.missionData.skills = formData.skills;
-        warriorData.skills = formData.skills; // Ajouter les compétences sélectionnées
       }
 
       console.log('Création du guerrier:', warriorData);
@@ -288,8 +304,21 @@ const HomePage = () => {
       setStats(updatedStats);
       saveToLocalStorage(STORAGE_KEYS.STATS, updatedStats);
 
-      // Ajouter une activité
-      addActivity(`${formData.name} a rejoint la résistance en tant que ${warriorData.badge}`, 'join');
+      // Ajouter une activité avec un message spécifique
+      const activityMessages = {
+        contact: `a envoyé un message aux druides NIRD`,
+        donate: formData.recurring 
+          ? `a fait un don récurrent de ${formData.amount}€`
+          : `a fait un don de ${formData.amount}€`,
+        volunteer: `s'est inscrit comme bénévole avec ${formData.skills.length} compétences`,
+        info: `a consulté l'oracle numérique`
+      };
+
+      addActivity(
+        formData.name, 
+        activityMessages[selectedMission.id] || "a rejoint la résistance",
+        selectedMission.id
+      );
 
       setLastSubmissionTime(now);
 
